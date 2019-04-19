@@ -29,18 +29,42 @@
     return self.objects.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CakeCell *cell = (CakeCell*)[tableView dequeueReusableCellWithIdentifier:@"CakeCell"];
     
     NSDictionary *object = self.objects[indexPath.row];
     cell.titleLabel.text = object[@"title"];
     cell.descriptionLabel.text = object[@"desc"];
- 
     
-    NSURL *aURL = [NSURL URLWithString:object[@"image"]];
-    NSData *data = [NSData dataWithContentsOfURL:aURL];
-    UIImage *image = [UIImage imageWithData:data];
-    [cell.cakeImageView setImage:image];
+    // Start by insuring image starts off at nil
+    cell.imageView.image = nil;
+ 
+    NSURL *aUrl = [NSURL URLWithString: object[@"image"]];
+    
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL: aUrl completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            UIImage *image = [UIImage imageWithData: data];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    CakeCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                    if (updateCell)
+                        updateCell.cakeImageView.image = image;
+                });
+            }
+        } else {
+            NSLog(@"Error handling");
+            cell.imageView.image = nil;
+        }
+    }];
+    [task resume];
     
     return cell;
 }

@@ -63,6 +63,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8679BDB42269A980003BA991 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		8679BDB52269A98C003BA991 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
 		DBF17A081B0B648F004E6311 = {
 			isa = PBXGroup;
 			children = (
@@ -84,13 +98,12 @@
 		DBF17A131B0B648F004E6311 /* Cake List */ = {
 			isa = PBXGroup;
 			children = (
-				DBF17A181B0B648F004E6311 /* AppDelegate.h */,
-				DBF17A191B0B648F004E6311 /* AppDelegate.m */,
+				8679BDB42269A980003BA991 /* NetworkLayer */,
+				8679BDB52269A98C003BA991 /* Modal */,
+				DBF17A211B0B648F004E6311 /* Main.storyboard */,
 				DBF17A401B0B8EE3004E6311 /* View Controllers */,
 				DBF17A411B0B8EED004E6311 /* Cells */,
-				DBF17A211B0B648F004E6311 /* Main.storyboard */,
 				DBF17A241B0B648F004E6311 /* Images.xcassets */,
-				DBF17A261B0B648F004E6311 /* LaunchScreen.xib */,
 				DBF17A141B0B648F004E6311 /* Supporting Files */,
 			);
 			path = "Cake List";
@@ -99,6 +112,9 @@
 		DBF17A141B0B648F004E6311 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DBF17A181B0B648F004E6311 /* AppDelegate.h */,
+				DBF17A191B0B648F004E6311 /* AppDelegate.m */,
+				DBF17A261B0B648F004E6311 /* LaunchScreen.xib */,
 				DBF17A151B0B648F004E6311 /* Info.plist */,
 				DBF17A161B0B648F004E6311 /* main.m */,
 			);

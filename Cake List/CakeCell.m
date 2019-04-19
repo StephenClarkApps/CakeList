@@ -10,5 +10,10 @@
 
 @implementation CakeCell
 
-
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.cakeImageView.image = nil;
+    self.titleLabel.text = @"";
+    self.descriptionLabel.text = @"";
+}
 @end
