@@ -7,7 +7,9 @@
 //
 
 #import "MasterViewController.h"
-#import "CakeCell.h"
+//#import "CakeCell.h"
+#import "CakeTableViewCell.h"
+#import "UINib+CakeList.h"
 
 @interface MasterViewController ()
 @property (strong, nonatomic) NSArray *objects;
@@ -17,10 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTableView];
     [self getData];
 }
 
 #pragma mark - Table View
+
+
+/**
+ Method to register cells to use in the tableview
+ */
+- (void)setupTableView {
+    
+    [self.tableView registerNib:CakeTableViewCell.nibForClass forCellReuseIdentifier:CakeTableViewCell.nibIdentifier];
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -38,7 +52,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CakeCell *cell = (CakeCell*)[tableView dequeueReusableCellWithIdentifier:@"CakeCell"];
+    CakeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CakeTableViewCell.nibIdentifier
+                                                                                forIndexPath:indexPath];
     
     NSDictionary *object = self.objects[indexPath.row];
     cell.titleLabel.text = object[@"title"];
@@ -54,7 +69,7 @@
             UIImage *image = [UIImage imageWithData: data];
             if (image) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    CakeCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                    CakeTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
                     if (updateCell)
                         updateCell.cakeImageView.image = image;
                 });

@@ -12,7 +12,7 @@
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    self.cakeImageView.image = nil;
+    self.cakeImageView.image = [UIImage imageNamed:@"placeholder"] ;
     self.titleLabel.text = @"";
     self.descriptionLabel.text = @"";
 }
