@@ -7,7 +7,6 @@
 //
 
 #import "MasterViewController.h"
-//#import "CakeCell.h"
 #import "CakeTableViewCell.h"
 #import "UINib+CakeList.h"
 

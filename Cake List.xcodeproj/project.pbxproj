@@ -17,7 +17,6 @@
 		DBF17A251B0B648F004E6311 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF17A241B0B648F004E6311 /* Images.xcassets */; };
 		DBF17A281B0B648F004E6311 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBF17A261B0B648F004E6311 /* LaunchScreen.xib */; };
 		DBF17A341B0B648F004E6311 /* Cake_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF17A331B0B648F004E6311 /* Cake_ListTests.m */; };
-		DBF17A3F1B0B8E16004E6311 /* CakeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF17A3E1B0B8E16004E6311 /* CakeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +48,6 @@
 		DBF17A2D1B0B648F004E6311 /* Cake ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cake ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF17A321B0B648F004E6311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBF17A331B0B648F004E6311 /* Cake_ListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cake_ListTests.m; sourceTree = "<group>"; };
-		DBF17A3D1B0B8E16004E6311 /* CakeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CakeCell.h; sourceTree = "<group>"; };
-		DBF17A3E1B0B8E16004E6311 /* CakeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CakeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +117,7 @@
 				8679BDB52269A98C003BA991 /* Modal */,
 				DBF17A211B0B648F004E6311 /* Main.storyboard */,
 				DBF17A401B0B8EE3004E6311 /* View Controllers */,
-				DBF17A411B0B8EED004E6311 /* Cells */,
+				DBF17A411B0B8EED004E6311 /* TableViewCells */,
 				DBF17A241B0B648F004E6311 /* Images.xcassets */,
 				DBF17A141B0B648F004E6311 /* Supporting Files */,
 			);
@@ -165,16 +162,14 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		DBF17A411B0B8EED004E6311 /* Cells */ = {
+		DBF17A411B0B8EED004E6311 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DBF17A3D1B0B8E16004E6311 /* CakeCell.h */,
-				DBF17A3E1B0B8E16004E6311 /* CakeCell.m */,
 				8679BDC12269ADE0003BA991 /* CakeTableViewCell.h */,
 				8679BDC22269ADE0003BA991 /* CakeTableViewCell.m */,
 				8679BDC32269ADE0003BA991 /* CakeTableViewCell.xib */,
 			);
-			name = Cells;
+			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +278,6 @@
 			files = (
 				DBF17A1A1B0B648F004E6311 /* AppDelegate.m in Sources */,
 				8679BDC42269ADE0003BA991 /* CakeTableViewCell.m in Sources */,
-				DBF17A3F1B0B8E16004E6311 /* CakeCell.m in Sources */,
 				DBF17A1D1B0B648F004E6311 /* MasterViewController.m in Sources */,
 				DBF17A171B0B648F004E6311 /* main.m in Sources */,
 				8679BDCC2269B042003BA991 /* UINib+CakeList.m in Sources */,
