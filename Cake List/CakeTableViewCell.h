@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *cakeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @end

@@ -10,15 +10,15 @@
 @implementation NSObject (NIB)
 
 + (UINib *)nibForClass {
-    return [UINib nibWithNibName:[self safeNibName] bundle:nil];
+    return [UINib nibWithNibName:[self normalizedNibName] bundle:nil];
 }
 
 + (NSString *)nibIdentifier {
-    return [self safeNibName];
+    return [self normalizedNibName];
 }
 
 + (instancetype)loadFromNib {
-    NSArray *nibObjects = [[NSBundle mainBundle] loadNibNamed:[self safeNibName]
+    NSArray *nibObjects = [[NSBundle mainBundle] loadNibNamed:[self normalizedNibName]
                                                         owner:nil
                                                       options:nil];
     for (id nibView in nibObjects) {
@@ -30,14 +30,12 @@
 }
 
 /*!
- Objective-C and Swift classes are named differently, so we may need to work out
- the name of the file to look up.
- Swift class name = TARGET.CLASS
- Objective C class name = CLASS
+ Objective-C and Swift classes are named differently, so we may need to work out the name of the file to look up.
+ Specifically: Swift class names work like: TARGET.CLASS BUT Objective C class names are just CLASS
  
- @return the name of the class without prefixes (split string on `.`)
+ @return the name of the class without any potential prefixes (by taking just the bit after `.` where relevant)
  */
-+ (NSString *)safeNibName {
++ (NSString *)normalizedNibName {
     NSString *fullClassName = NSStringFromClass([self class]);
     return [fullClassName componentsSeparatedByString:@"."].lastObject;
 }

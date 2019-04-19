@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "MasterViewController.h"
+#import "CLNetworking.h"
 
 @interface Cake_ListTests : XCTestCase
 
@@ -25,16 +27,19 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
+//- (void)testMasterViewController {
+//    MasterViewController *mast = [[MasterViewController alloc] init];
+//    XCTAssertNotNil(mast.view);
+//    XCTAssertTrue(mast.isViewLoaded);
+//}
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+
+
+//- (void)testPerformanceExample {
+//    // This is an example of a performance test case.
+//    [self measureBlock:^{
+//        // Put the code you want to measure the time of here.
+//    }];
+//}
 
 @end
