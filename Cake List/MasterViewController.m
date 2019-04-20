@@ -109,13 +109,15 @@
     
     
     if ([self.imageDict objectForKey:self.cakes[indexPath.row].image]) {
+        cell.cakeImageView.alpha = 0.0;
+        NSString *lookup = self.cakes[indexPath.row].image;
+        cell.cakeImageView.image = [self.imageDict objectForKey:lookup];
+        
         // The image for this row has been previously cached
-        [UIView animateWithDuration:1.0f animations:^{
+        [UIView animateWithDuration:0.5f animations:^{
             cell.cakeImageView.alpha = 1.0;
         } completion:^(BOOL finished) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSString *lookup = self.cakes[indexPath.row].image;
-                cell.cakeImageView.image = [self.imageDict objectForKey:lookup];
                 [cell.spinner stopAnimating];
             });
         }];
