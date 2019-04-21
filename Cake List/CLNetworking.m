@@ -35,11 +35,6 @@
     [self.sessionTask resume];
 }
 
-//--(void)getDataFromAUrl:(NSString *)urlString
-//         withCompletion: (void (^)(NSError * error, NSData * data))completion {
-//    
-//}
-
 
 /**
  Function which tries to retrive `Cakes` from json found at a given URL
@@ -52,13 +47,9 @@
         withSuccessBlock:(void (^)(NSArray *objects))success
          andFailureBlock:(void (^)(NSError *error))failure {
     
-    //CLNetworking *networking = [[CLNetworking alloc] init];
-    
-    
-    //__weak __typeof__(self) weakSelf = self;
     [self setCompletionHandler:^(NSError *error, NSData *data) {
         if (error != nil) {
-            NSLog (@"Add error handling - error getting cakes data");
+            failure(error);
         } else if (data != nil) {
             NSError *jsonError;
             id responseData = [NSJSONSerialization
@@ -71,7 +62,6 @@
                     success(objects);
                 });
             } else {
-                NSLog (@"Json decoding error");
                 failure(jsonError);
             }
         }

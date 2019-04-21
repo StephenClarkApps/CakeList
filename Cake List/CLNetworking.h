@@ -4,9 +4,10 @@
 //
 //  Created by Stephen Clark on 19/04/2019.
 //
+
 #import "CLCake.h"
 
-@interface CLNetworking : NSObject
+@interface CLNetworking: NSObject
 
 @property (nonatomic, strong) NSURLSessionDataTask *sessionTask;
 @property (nonatomic, copy) void (^completionHandler)(NSError *, NSData *);
@@ -17,4 +18,3 @@
          andFailureBlock:(void (^)(NSError *error))failure;
 
 @end
-

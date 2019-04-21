@@ -13,16 +13,16 @@
 		8679BDD12269F45D003BA991 /* CLNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8679BDD02269F45D003BA991 /* CLNetworking.m */; };
 		8679BDD9226A08F9003BA991 /* CLFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8679BDD8226A08F9003BA991 /* CLFunctions.m */; };
 		8679BDDD226A1009003BA991 /* CLCake.m in Sources */ = {isa = PBXBuildFile; fileRef = 8679BDDC226A1009003BA991 /* CLCake.m */; };
-		8679BDE0226A1D1C003BA991 /* CakeNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8679BDDF226A1D1C003BA991 /* CakeNetworkingTests.m */; };
+		8679BDE0226A1D1C003BA991 /* CakeNetworkingAndParsingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8679BDDF226A1D1C003BA991 /* CakeNetworkingAndParsingTests.m */; };
 		8679BDE2226A20A4003BA991 /* cakes.json in Resources */ = {isa = PBXBuildFile; fileRef = 8679BDE1226A20A4003BA991 /* cakes.json */; };
 		8679BDE7226A27C0003BA991 /* not_cakes.json in Resources */ = {isa = PBXBuildFile; fileRef = 8679BDE6226A27C0003BA991 /* not_cakes.json */; };
+		86F0F2FA226C3A9C00644969 /* CLCakesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F0F2F9226C3A9C00644969 /* CLCakesHelper.m */; };
 		DBF17A171B0B648F004E6311 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF17A161B0B648F004E6311 /* main.m */; };
 		DBF17A1A1B0B648F004E6311 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF17A191B0B648F004E6311 /* AppDelegate.m */; };
 		DBF17A1D1B0B648F004E6311 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF17A1C1B0B648F004E6311 /* MasterViewController.m */; };
 		DBF17A231B0B648F004E6311 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF17A211B0B648F004E6311 /* Main.storyboard */; };
 		DBF17A251B0B648F004E6311 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF17A241B0B648F004E6311 /* Images.xcassets */; };
 		DBF17A281B0B648F004E6311 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBF17A261B0B648F004E6311 /* LaunchScreen.xib */; };
-		DBF17A341B0B648F004E6311 /* Cake_ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF17A331B0B648F004E6311 /* Cake_ListTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +48,11 @@
 		8679BDDA226A0911003BA991 /* CLFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLFunctions.h; sourceTree = "<group>"; };
 		8679BDDC226A1009003BA991 /* CLCake.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLCake.m; sourceTree = "<group>"; };
 		8679BDDE226A101B003BA991 /* CLCake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCake.h; sourceTree = "<group>"; };
-		8679BDDF226A1D1C003BA991 /* CakeNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CakeNetworkingTests.m; sourceTree = "<group>"; };
+		8679BDDF226A1D1C003BA991 /* CakeNetworkingAndParsingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CakeNetworkingAndParsingTests.m; sourceTree = "<group>"; };
 		8679BDE1226A20A4003BA991 /* cakes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cakes.json; sourceTree = "<group>"; };
 		8679BDE6226A27C0003BA991 /* not_cakes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = not_cakes.json; sourceTree = "<group>"; };
+		86F0F2F8226C3A8700644969 /* CLCakesHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCakesHelper.h; sourceTree = "<group>"; };
+		86F0F2F9226C3A9C00644969 /* CLCakesHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLCakesHelper.m; sourceTree = "<group>"; };
 		DBF17A111B0B648F004E6311 /* Cake List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cake List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF17A151B0B648F004E6311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBF17A161B0B648F004E6311 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,7 +65,6 @@
 		DBF17A271B0B648F004E6311 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DBF17A2D1B0B648F004E6311 /* Cake ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cake ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF17A321B0B648F004E6311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBF17A331B0B648F004E6311 /* Cake_ListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cake_ListTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,15 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
+		86F0F2F7226C3A5300644969 /* ModelHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				86F0F2F8226C3A8700644969 /* CLCakesHelper.h */,
+				86F0F2F9226C3A9C00644969 /* CLCakesHelper.m */,
+			);
+			name = ModelHelpers;
+			sourceTree = "<group>";
+		};
 		DBF17A081B0B648F004E6311 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				8679BDC92269B00A003BA991 /* Categories */,
 				8679BDB42269A980003BA991 /* NetworkLayer */,
 				8679BDB52269A98C003BA991 /* ModalLayer */,
+				86F0F2F7226C3A5300644969 /* ModelHelpers */,
 				8679BDCE2269CAEF003BA991 /* ViewLayer */,
 				DBF17A241B0B648F004E6311 /* Images.xcassets */,
 				DBF17A141B0B648F004E6311 /* Supporting Files */,
@@ -186,8 +197,7 @@
 		DBF17A301B0B648F004E6311 /* Cake ListTests */ = {
 			isa = PBXGroup;
 			children = (
-				DBF17A331B0B648F004E6311 /* Cake_ListTests.m */,
-				8679BDDF226A1D1C003BA991 /* CakeNetworkingTests.m */,
+				8679BDDF226A1D1C003BA991 /* CakeNetworkingAndParsingTests.m */,
 				DBF17A311B0B648F004E6311 /* Supporting Files */,
 			);
 			path = "Cake ListTests";
@@ -332,6 +342,7 @@
 				DBF17A1A1B0B648F004E6311 /* AppDelegate.m in Sources */,
 				8679BDC42269ADE0003BA991 /* CakeTableViewCell.m in Sources */,
 				8679BDD9226A08F9003BA991 /* CLFunctions.m in Sources */,
+				86F0F2FA226C3A9C00644969 /* CLCakesHelper.m in Sources */,
 				DBF17A1D1B0B648F004E6311 /* MasterViewController.m in Sources */,
 				DBF17A171B0B648F004E6311 /* main.m in Sources */,
 				8679BDDD226A1009003BA991 /* CLCake.m in Sources */,
@@ -343,8 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBF17A341B0B648F004E6311 /* Cake_ListTests.m in Sources */,
-				8679BDE0226A1D1C003BA991 /* CakeNetworkingTests.m in Sources */,
+				8679BDE0226A1D1C003BA991 /* CakeNetworkingAndParsingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

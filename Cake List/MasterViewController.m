@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "CakeTableViewCell.h"
+#import "CLCakesHelper.h"
 #import "UINib+CakeList.h"
 #import "CLConstants.h"
 #import "CLNetworking.h"
@@ -28,7 +29,8 @@
     CLNetworking *networking = [[CLNetworking alloc] init];
     [networking getCakesListData:CLCakesUrl withSuccessBlock:^(NSArray *objects) {
         NSLog (@"Success");
-        self.cakes = [self makeCakesWhilstTheSunShines: objects];
+        CLCakesHelper *cakesHelper = [[CLCakesHelper alloc] init];
+        self.cakes = [cakesHelper makeCakesWhilstTheSunShines:objects];
         [self.tableView reloadData];
     } andFailureBlock:^(NSError *error) {
         NSLog (@"Failure");
@@ -39,7 +41,9 @@
     [self setupRefreshControl];
 }
 
-/// Initialize the refresh control.
+/**
+ Initialize the refresh control.
+ */
 - (void) setupRefreshControl {
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor blueColor];
@@ -94,13 +98,6 @@
     CakeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CakeTableViewCell.nibIdentifier
                                                                                 forIndexPath:indexPath];
     
-    // Create and add spinner (could do this in the cell but don't always want to every time
-    cell.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    cell.spinner.frame = CGRectMake(0, 0, cell.cakeImageView.frame.size.width, cell.cakeImageView.frame.size.height);
-    //self.accessoryView = self.spinner;
-    [cell.contentView setCenter: cell.cakeImageView.center];
-    [cell.cakeImageView addSubview:cell.spinner];
-    [cell.spinner setHidesWhenStopped:YES];
     [cell.spinner startAnimating];
     
     // Set title and description labels
@@ -123,7 +120,6 @@
         }];
         
     } else {
-        // Abstract all this !!!
         CLNetworking *networking = [[CLNetworking alloc] init];
         
         __weak __typeof__(self) weakSelf = self;
@@ -137,7 +133,6 @@
                         CakeTableViewCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
                         if (updateCell) {
                             dispatch_async(dispatch_get_main_queue(), ^{
-                                
                                 updateCell.cakeImageView.alpha = 0.0;
                                 updateCell.cakeImageView.image = image;
                                 
@@ -157,14 +152,14 @@
                         }
                     });
                 } else {
-                    NSLog(@"no image");
+                    //No Image
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [cell.spinner stopAnimating];
                         [self.imageDict setValue:[UIImage imageNamed:@"placeholder"] forKey: self.cakes[indexPath.row].image];
                     });
                 }
             } else {
-                NSLog(@"no data");
+                // No Data
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [cell.spinner stopAnimating];
                     [self.imageDict setValue:[UIImage imageNamed:@"placeholder"] forKey: self.cakes[indexPath.row].image];
@@ -179,19 +174,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (CLCakes *)makeCakesWhilstTheSunShines:(NSArray *)cakeArr{
-    NSMutableArray *theCakes = [[CLCakes alloc] init];
-    // loop through dictionary elements and manually deserealise
-    for (NSDictionary *object in cakeArr) {
-        CLCake *cake = [[CLCake alloc] init];
-        cake.descript = object[@"desc"];
-        cake.image = object[@"image"];
-        cake.title = [object[@"title"] capitalizedString];
-        [theCakes addObject:cake];
-    }
-    return theCakes;
 }
 
 @end
